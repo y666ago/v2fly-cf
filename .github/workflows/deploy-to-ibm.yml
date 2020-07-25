@@ -5,7 +5,7 @@ on:
     branches:
     - master
   schedule:
-    - cron: "0 21 * * 3"
+    - cron: '05 20 * * ?'
 
 jobs:
   deploy:
@@ -49,9 +49,9 @@ jobs:
         cat > manifest-ibm.yml << EOF
         ---
         applications:
-        - name: v2ws
-          memory: 128M
-          disk_quota: 128M
+        - name: y666ibm6
+          memory: 256M
+          disk_quota: 256M
           random-route: true
           command: ./v2ray
           buildpacks:
@@ -66,5 +66,5 @@ jobs:
         cf_org: ${{ secrets.CF_ORG_IBM }}
         cf_space: ${{ secrets.CF_SPACE_IBM }}
         command: >
-          push v2ws -f manifest-ibm.yml
+          push y666ibm6 -f manifest-ibm.yml
           
